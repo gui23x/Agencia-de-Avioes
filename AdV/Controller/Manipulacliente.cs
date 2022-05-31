@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
+using System.Windows.Forms;
 
 namespace AdV.Controller
 {
@@ -18,11 +19,36 @@ namespace AdV.Controller
 
             try
             {
-                comando.Parameters.AddWithValue("@nomeCli");
-                comando.Parameters.AddWithValue("@emailCli");
-                comando.Parameters.AddWithValue("@senhaCli");
-                comando.Parameters.AddWithValue("@imagemCli");
+                comando.Parameters.AddWithValue("@nomeCli",Model.Cliente.NomeCli);
+                comando.Parameters.AddWithValue("@emailCli",Model.Cliente.EmailCli);
+                comando.Parameters.AddWithValue("@senhaCli",Model.Cliente.SenhaCli);
+                comando.Parameters.AddWithValue("@imagemCli",Model.Cliente.ImagemCli);
+
+                SqlParameter nv = comando.Parameters.AddWithValue("@codigoCli", SqlDbType.Int);
+                nv.Direction = ParameterDirection.Output;
+
+                conectar.Open();
+                comando.ExecuteNonQuery();
+
+                var resposta = MessageBox.Show("Cadastro de Cliente efetuada com sucesso,deseja efetuar um novo registro?",
+                    "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+
+                if(resposta == DialogResult.Yes)
+                {
+                    Model.Cliente.Retorno = "Sim";
+                    return;
+                }
+                else
+                {
+                    Model.Cliente.Retorno = "Não";
+                    return;
+                }
             }
+            catch
+            {
+
+            }
+           
         }
 
 

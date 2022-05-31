@@ -137,6 +137,7 @@ namespace AdV.View.Cadastro
             this.btnSalvarCli.TabIndex = 10;
             this.btnSalvarCli.Text = "Salvar";
             this.btnSalvarCli.UseVisualStyleBackColor = true;
+            this.btnSalvarCli.Click += new System.EventHandler(this.btnSalvarCli_Click);
             // 
             // lblPortifolioCli
             // 
