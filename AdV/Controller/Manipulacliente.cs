@@ -26,7 +26,7 @@ namespace AdV.Controller
 
                 SqlParameter nv = comando.Parameters.AddWithValue("@codigoCli", SqlDbType.Int);
                 nv.Direction = ParameterDirection.Output;
-
+                MessageBox.Show("Pronto!!!");
                 conectar.Open();
                 comando.ExecuteNonQuery();
 

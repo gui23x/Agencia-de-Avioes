@@ -17,7 +17,7 @@ namespace AdV.Model
         private static Array imagemCli;
         private static string retorno;
 
-                                     //pega             //leva
+                                     //pega             leva
         public static int CodigoCli { get => codigoCli; set => codigoCli = value; }
         public static string NomeCli { get => nomeCli; set => nomeCli = value; }
         public static string EmailCli { get => emailCli; set => emailCli = value; }

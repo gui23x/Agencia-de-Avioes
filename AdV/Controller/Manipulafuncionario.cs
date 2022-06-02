@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
+using System.Windows.Forms;
 
 namespace AdV.Controller
 {
@@ -21,6 +22,26 @@ namespace AdV.Controller
                 comando.Parameters.AddWithValue("@nomeFun", Model.Funcionario.NomeFun);
                 comando.Parameters.AddWithValue("@emailFun", Model.Funcionario.EmailFun);
                 comando.Parameters.AddWithValue("@senhaFun", Model.Funcionario.SenhaFun);
+
+                SqlParameter nv = comando.Parameters.AddWithValue("@codigoFun", SqlDbType.Int);
+                nv.Direction = ParameterDirection.Output;
+                MessageBox.Show("Pronto!!!");
+                conectar.Open();
+                comando.ExecuteNonQuery();
+
+                var resposta = MessageBox.Show("Cadastro de Funcionário efetuada com sucesso,deseja efetuar um novo registro?",
+                    "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+
+                if (resposta == DialogResult.Yes)
+                {
+                    Model.Funcionario.Retorno = "Sim";
+                    return;
+                }
+                else
+                {
+                    Model.Funcionario.Retorno = "Não";
+                    return;
+                }
             }
             catch
             {

@@ -114,6 +114,7 @@ namespace AdV.View.Cadastro
             this.btnSalvarFun.TabIndex = 7;
             this.btnSalvarFun.Text = "Salvar";
             this.btnSalvarFun.UseVisualStyleBackColor = true;
+            this.btnSalvarFun.Click += new System.EventHandler(this.btnSalvarFun_Click);
             // 
             // TelaCadastrarFuncionario
             // 

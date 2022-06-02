@@ -10,7 +10,7 @@ namespace AdV.Controller
     {
         public static string conectar()
         {
-            return @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\guilherme.gsilva53\source\repos\AdV\AdV\banco\bdagenciaviagens.mdf;Integrated Security=True";
+            return @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\guilherme.gsilva53\source\repos\gui23x\Agencia-de-Avioes\AdV\banco\bdagenciaviagens.mdf;Integrated Security=True";
         }
     }
 }

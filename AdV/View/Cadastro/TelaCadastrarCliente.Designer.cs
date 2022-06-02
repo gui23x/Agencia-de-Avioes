@@ -41,6 +41,7 @@ namespace AdV.View.Cadastro
             this.btnBuscarImagemCli = new System.Windows.Forms.Button();
             this.btnSalvarCli = new System.Windows.Forms.Button();
             this.lblPortifolioCli = new System.Windows.Forms.Label();
+            this.openFileDialogImagem = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.pbxImagemCli)).BeginInit();
             this.SuspendLayout();
             // 
@@ -111,22 +112,24 @@ namespace AdV.View.Cadastro
             // 
             // pbxImagemCli
             // 
-            this.pbxImagemCli.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.pbxImagemCli.Location = new System.Drawing.Point(405, 105);
+            this.pbxImagemCli.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.pbxImagemCli.Location = new System.Drawing.Point(391, 105);
             this.pbxImagemCli.Name = "pbxImagemCli";
-            this.pbxImagemCli.Size = new System.Drawing.Size(147, 146);
+            this.pbxImagemCli.Size = new System.Drawing.Size(176, 191);
+            this.pbxImagemCli.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pbxImagemCli.TabIndex = 8;
             this.pbxImagemCli.TabStop = false;
             // 
             // btnBuscarImagemCli
             // 
             this.btnBuscarImagemCli.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.btnBuscarImagemCli.Location = new System.Drawing.Point(420, 260);
+            this.btnBuscarImagemCli.Location = new System.Drawing.Point(418, 302);
             this.btnBuscarImagemCli.Name = "btnBuscarImagemCli";
             this.btnBuscarImagemCli.Size = new System.Drawing.Size(122, 57);
             this.btnBuscarImagemCli.TabIndex = 9;
             this.btnBuscarImagemCli.Text = "Buscar Imagem";
             this.btnBuscarImagemCli.UseVisualStyleBackColor = true;
+            this.btnBuscarImagemCli.Click += new System.EventHandler(this.btnBuscarImagemCli_Click);
             // 
             // btnSalvarCli
             // 
@@ -149,6 +152,10 @@ namespace AdV.View.Cadastro
             this.lblPortifolioCli.Size = new System.Drawing.Size(79, 21);
             this.lblPortifolioCli.TabIndex = 11;
             this.lblPortifolioCli.Text = "Portifólio";
+            // 
+            // openFileDialogImagem
+            // 
+            this.openFileDialogImagem.FileName = "openFileDialogImagem";
             // 
             // TelaCadastrarCliente
             // 
@@ -193,5 +200,6 @@ namespace AdV.View.Cadastro
         private System.Windows.Forms.Button btnBuscarImagemCli;
         private System.Windows.Forms.Button btnSalvarCli;
         private System.Windows.Forms.Label lblPortifolioCli;
+        private System.Windows.Forms.OpenFileDialog openFileDialogImagem;
     }
 }
