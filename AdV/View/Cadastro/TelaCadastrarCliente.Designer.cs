@@ -112,7 +112,8 @@ namespace AdV.View.Cadastro
             // 
             // pbxImagemCli
             // 
-            this.pbxImagemCli.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.pbxImagemCli.BackColor = System.Drawing.Color.Transparent;
+            this.pbxImagemCli.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pbxImagemCli.Location = new System.Drawing.Point(391, 105);
             this.pbxImagemCli.Name = "pbxImagemCli";
             this.pbxImagemCli.Size = new System.Drawing.Size(176, 191);

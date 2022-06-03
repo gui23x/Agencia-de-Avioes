@@ -31,6 +31,9 @@ namespace AdV.View.Cadastro
                 Funcionario.NomeFun = tbxNomeFun.Text;
                 Funcionario.EmailFun = tbxEmailFun.Text;
                 Funcionario.SenhaFun = tbxSenhaFun.Text;
+
+                Manipulafuncionario manipulaFuncionario = new Manipulafuncionario();
+                manipulaFuncionario.cadastrarFuncionario();
             }
 
             if(Funcionario.Retorno == "Sim")

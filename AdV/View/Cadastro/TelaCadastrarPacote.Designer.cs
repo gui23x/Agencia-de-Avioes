@@ -42,10 +42,11 @@ namespace AdV.View.Cadastro
             this.pbxImagemPac = new System.Windows.Forms.PictureBox();
             this.tbxIdaPac = new System.Windows.Forms.DateTimePicker();
             this.tbxVoltaPac = new System.Windows.Forms.DateTimePicker();
-            this.cbxOrigemPac = new System.Windows.Forms.ComboBox();
-            this.cbxDestinoPac = new System.Windows.Forms.ComboBox();
             this.btnSalvarPac = new System.Windows.Forms.Button();
             this.btnImagemPac = new System.Windows.Forms.Button();
+            this.openFileDialogImagem = new System.Windows.Forms.OpenFileDialog();
+            this.tbxOrigemPac = new System.Windows.Forms.TextBox();
+            this.tbxDestinoPac = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbxImagemPac)).BeginInit();
             this.SuspendLayout();
             // 
@@ -143,9 +144,12 @@ namespace AdV.View.Cadastro
             // 
             // pbxImagemPac
             // 
+            this.pbxImagemPac.BackColor = System.Drawing.Color.Transparent;
+            this.pbxImagemPac.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pbxImagemPac.Location = new System.Drawing.Point(401, 93);
             this.pbxImagemPac.Name = "pbxImagemPac";
             this.pbxImagemPac.Size = new System.Drawing.Size(185, 153);
+            this.pbxImagemPac.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxImagemPac.TabIndex = 12;
             this.pbxImagemPac.TabStop = false;
             this.pbxImagemPac.Click += new System.EventHandler(this.pictureBox1_Click);
@@ -166,22 +170,6 @@ namespace AdV.View.Cadastro
             this.tbxVoltaPac.Size = new System.Drawing.Size(200, 23);
             this.tbxVoltaPac.TabIndex = 14;
             // 
-            // cbxOrigemPac
-            // 
-            this.cbxOrigemPac.FormattingEnabled = true;
-            this.cbxOrigemPac.Location = new System.Drawing.Point(122, 67);
-            this.cbxOrigemPac.Name = "cbxOrigemPac";
-            this.cbxOrigemPac.Size = new System.Drawing.Size(201, 23);
-            this.cbxOrigemPac.TabIndex = 15;
-            // 
-            // cbxDestinoPac
-            // 
-            this.cbxDestinoPac.FormattingEnabled = true;
-            this.cbxDestinoPac.Location = new System.Drawing.Point(123, 102);
-            this.cbxDestinoPac.Name = "cbxDestinoPac";
-            this.cbxDestinoPac.Size = new System.Drawing.Size(199, 23);
-            this.cbxDestinoPac.TabIndex = 16;
-            // 
             // btnSalvarPac
             // 
             this.btnSalvarPac.Location = new System.Drawing.Point(460, 347);
@@ -190,6 +178,7 @@ namespace AdV.View.Cadastro
             this.btnSalvarPac.TabIndex = 17;
             this.btnSalvarPac.Text = "Salvar";
             this.btnSalvarPac.UseVisualStyleBackColor = true;
+            this.btnSalvarPac.Click += new System.EventHandler(this.btnSalvarPac_Click);
             // 
             // btnImagemPac
             // 
@@ -199,18 +188,38 @@ namespace AdV.View.Cadastro
             this.btnImagemPac.TabIndex = 18;
             this.btnImagemPac.Text = "Buscar Imagem";
             this.btnImagemPac.UseVisualStyleBackColor = true;
+            this.btnImagemPac.Click += new System.EventHandler(this.btnImagemPac_Click);
+            // 
+            // openFileDialogImagem
+            // 
+            this.openFileDialogImagem.FileName = "openFileDialogImagem";
+            // 
+            // tbxOrigemPac
+            // 
+            this.tbxOrigemPac.Location = new System.Drawing.Point(122, 72);
+            this.tbxOrigemPac.Name = "tbxOrigemPac";
+            this.tbxOrigemPac.Size = new System.Drawing.Size(201, 23);
+            this.tbxOrigemPac.TabIndex = 19;
+            // 
+            // tbxDestinoPac
+            // 
+            this.tbxDestinoPac.Location = new System.Drawing.Point(122, 104);
+            this.tbxDestinoPac.Name = "tbxDestinoPac";
+            this.tbxDestinoPac.Size = new System.Drawing.Size(201, 23);
+            this.tbxDestinoPac.TabIndex = 20;
             // 
             // TelaCadastrarPacote
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BackColor = System.Drawing.Color.LightSkyBlue;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(598, 417);
+            this.Controls.Add(this.tbxDestinoPac);
+            this.Controls.Add(this.tbxOrigemPac);
             this.Controls.Add(this.btnImagemPac);
             this.Controls.Add(this.btnSalvarPac);
-            this.Controls.Add(this.cbxDestinoPac);
-            this.Controls.Add(this.cbxOrigemPac);
             this.Controls.Add(this.tbxVoltaPac);
             this.Controls.Add(this.tbxIdaPac);
             this.Controls.Add(this.pbxImagemPac);
@@ -249,9 +258,10 @@ namespace AdV.View.Cadastro
         private System.Windows.Forms.PictureBox pbxImagemPac;
         private System.Windows.Forms.DateTimePicker tbxIdaPac;
         private System.Windows.Forms.DateTimePicker tbxVoltaPac;
-        private System.Windows.Forms.ComboBox cbxOrigemPac;
-        private System.Windows.Forms.ComboBox cbxDestinoPac;
         private System.Windows.Forms.Button btnSalvarPac;
         private System.Windows.Forms.Button btnImagemPac;
+        private System.Windows.Forms.OpenFileDialog openFileDialogImagem;
+        private System.Windows.Forms.TextBox tbxOrigemPac;
+        private System.Windows.Forms.TextBox tbxDestinoPac;
     }
 }
