@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AdV.View.Pesquisar;
 
 namespace AdV.View
 {
@@ -43,6 +44,18 @@ namespace AdV.View
         {
             Cadastro.TelaCadastrarPacote pacote = new Cadastro.TelaCadastrarPacote();
             pacote.ShowDialog();
+        }
+
+        private void cliPesquisar_Click(object sender, EventArgs e)
+        {
+            TelaPesquisarCliente pesquisarCliente = new TelaPesquisarCliente();
+            pesquisarCliente.ShowDialog();
+        }
+
+        private void funPesquisar_Click(object sender, EventArgs e)
+        {
+            TelaPesquisarFuncionario pesquisarFuncionario = new TelaPesquisarFuncionario();
+            pesquisarFuncionario.ShowDialog();
         }
     }
 }

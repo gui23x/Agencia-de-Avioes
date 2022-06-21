@@ -64,7 +64,7 @@ namespace AdV.View
             this.menuStrip1.Location = new System.Drawing.Point(106, 420);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 3, 0, 3);
-            this.menuStrip1.Size = new System.Drawing.Size(406, 31);
+            this.menuStrip1.Size = new System.Drawing.Size(526, 31);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -89,6 +89,7 @@ namespace AdV.View
             this.cliPesquisar.Name = "cliPesquisar";
             this.cliPesquisar.Size = new System.Drawing.Size(151, 26);
             this.cliPesquisar.Text = "Pesquisar";
+            this.cliPesquisar.Click += new System.EventHandler(this.cliPesquisar_Click);
             // 
             // funFuncionario
             // 
@@ -103,15 +104,16 @@ namespace AdV.View
             // funCadastrar
             // 
             this.funCadastrar.Name = "funCadastrar";
-            this.funCadastrar.Size = new System.Drawing.Size(151, 26);
+            this.funCadastrar.Size = new System.Drawing.Size(180, 26);
             this.funCadastrar.Text = "Cadastrar";
             this.funCadastrar.Click += new System.EventHandler(this.funCadastrar_Click);
             // 
             // funPesquisar
             // 
             this.funPesquisar.Name = "funPesquisar";
-            this.funPesquisar.Size = new System.Drawing.Size(151, 26);
+            this.funPesquisar.Size = new System.Drawing.Size(180, 26);
             this.funPesquisar.Text = "Pesquisar";
+            this.funPesquisar.Click += new System.EventHandler(this.funPesquisar_Click);
             // 
             // pacPacote
             // 

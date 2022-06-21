@@ -40,13 +40,9 @@ namespace AdV.View.Cadastro
             manipulaCliente.cadastrarCliente();
             }
 
-            if (Cliente.Retorno == "Sim")
+            if (Cliente.Retorno == "Não")
             {
                 LimparTela();
-            }
-            else if (Cliente.Retorno == "Não")
-            {
-                this.Close();
             }
         }
 
