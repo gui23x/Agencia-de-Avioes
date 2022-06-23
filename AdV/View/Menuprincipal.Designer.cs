@@ -104,14 +104,14 @@ namespace AdV.View
             // funCadastrar
             // 
             this.funCadastrar.Name = "funCadastrar";
-            this.funCadastrar.Size = new System.Drawing.Size(180, 26);
+            this.funCadastrar.Size = new System.Drawing.Size(151, 26);
             this.funCadastrar.Text = "Cadastrar";
             this.funCadastrar.Click += new System.EventHandler(this.funCadastrar_Click);
             // 
             // funPesquisar
             // 
             this.funPesquisar.Name = "funPesquisar";
-            this.funPesquisar.Size = new System.Drawing.Size(180, 26);
+            this.funPesquisar.Size = new System.Drawing.Size(151, 26);
             this.funPesquisar.Text = "Pesquisar";
             this.funPesquisar.Click += new System.EventHandler(this.funPesquisar_Click);
             // 
@@ -127,15 +127,16 @@ namespace AdV.View
             // pacCadastrar
             // 
             this.pacCadastrar.Name = "pacCadastrar";
-            this.pacCadastrar.Size = new System.Drawing.Size(151, 26);
+            this.pacCadastrar.Size = new System.Drawing.Size(180, 26);
             this.pacCadastrar.Text = "Cadastrar";
             this.pacCadastrar.Click += new System.EventHandler(this.pacCadastrar_Click);
             // 
             // pacPesquisar
             // 
             this.pacPesquisar.Name = "pacPesquisar";
-            this.pacPesquisar.Size = new System.Drawing.Size(151, 26);
+            this.pacPesquisar.Size = new System.Drawing.Size(180, 26);
             this.pacPesquisar.Text = "Pesquisar";
+            this.pacPesquisar.Click += new System.EventHandler(this.pacPesquisar_Click);
             // 
             // venVendas
             // 

@@ -57,5 +57,11 @@ namespace AdV.View
             TelaPesquisarFuncionario pesquisarFuncionario = new TelaPesquisarFuncionario();
             pesquisarFuncionario.ShowDialog();
         }
+
+        private void pacPesquisar_Click(object sender, EventArgs e)
+        {
+            TelaPesquisarPacote pesquisarPacote = new TelaPesquisarPacote();
+            pesquisarPacote.ShowDialog();
+        }
     }
 }

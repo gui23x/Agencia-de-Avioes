@@ -40,7 +40,6 @@ namespace AdV.View.Pesquisar
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Foto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pesquisarCodigo = new System.Windows.Forms.TabPage();
             this.btnDeletarCodFun = new System.Windows.Forms.Button();
             this.btnAlterarCodFun = new System.Windows.Forms.Button();
@@ -134,8 +133,7 @@ namespace AdV.View.Pesquisar
             this.dgvInfoFun.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Codigo,
             this.Nome,
-            this.Email,
-            this.Foto});
+            this.Email});
             this.dgvInfoFun.Location = new System.Drawing.Point(6, 26);
             this.dgvInfoFun.Name = "dgvInfoFun";
             this.dgvInfoFun.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -158,11 +156,6 @@ namespace AdV.View.Pesquisar
             // 
             this.Email.HeaderText = "Email";
             this.Email.Name = "Email";
-            // 
-            // Foto
-            // 
-            this.Foto.HeaderText = "Foto";
-            this.Foto.Name = "Foto";
             // 
             // pesquisarCodigo
             // 
@@ -217,6 +210,7 @@ namespace AdV.View.Pesquisar
             this.tbxEmailCodFun.Name = "tbxEmailCodFun";
             this.tbxEmailCodFun.Size = new System.Drawing.Size(257, 23);
             this.tbxEmailCodFun.TabIndex = 28;
+            this.tbxEmailCodFun.TextChanged += new System.EventHandler(this.tbxEmailCodFun_TextChanged);
             // 
             // tbxNomeCodFun
             // 
@@ -328,10 +322,6 @@ namespace AdV.View.Pesquisar
         private System.Windows.Forms.Label lblNomeFun;
         private System.Windows.Forms.GroupBox gbxInfoFun;
         private System.Windows.Forms.DataGridView dgvInfoFun;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Foto;
         private System.Windows.Forms.TabPage pesquisarCodigo;
         private System.Windows.Forms.Button btnDeletarCodFun;
         private System.Windows.Forms.Button btnAlterarCodFun;
@@ -345,5 +335,8 @@ namespace AdV.View.Pesquisar
         private System.Windows.Forms.Label lblCodigoFun;
         private System.Windows.Forms.Button btnCodigoFun;
         private System.Windows.Forms.Label lblTituloFun;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
     }
 }

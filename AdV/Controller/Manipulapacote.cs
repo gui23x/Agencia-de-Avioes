@@ -73,7 +73,7 @@ namespace AdV.Controller
                     Pacote.OrigemPac = arrayDados["origemPac"].ToString();
                     Pacote.DestinoPac = arrayDados["destinoPac"].ToString();
                     Pacote.DataPac = Convert.ToDateTime(arrayDados["dataPac"]);
-                    Pacote.DataPacVolta = Convert.ToDateTime(arrayDados["dataVoltaPac"]);
+                    Pacote.DataPacVolta = Convert.ToDateTime(arrayDados["dataPacVolta"]);
                     Pacote.DescricaoPac = arrayDados["descricaoPac"].ToString();
                     Pacote.ImagemPac = (System.Array)arrayDados["imagemPac"];
                     Pacote.Retorno = "Sim";
@@ -81,7 +81,7 @@ namespace AdV.Controller
                 else
                 {
                     MessageBox.Show("Código não localizado", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    Cliente.Retorno = "Não";
+                    Pacote.Retorno = "Não";
                 }
             }
             catch (Exception e)

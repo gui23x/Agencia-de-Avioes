@@ -69,5 +69,10 @@ namespace AdV.View.Pesquisar
             tbxEmailCodFun.Text = string.Empty;
             tbxSenhaCodFun.Text = string.Empty;
         }
+
+        private void tbxEmailCodFun_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
