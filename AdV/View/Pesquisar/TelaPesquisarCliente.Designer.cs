@@ -57,6 +57,7 @@ namespace AdV.View.Pesquisar
             this.tbxCodigoCli = new System.Windows.Forms.TextBox();
             this.lblCodigoCli = new System.Windows.Forms.Label();
             this.btnCodigoCli = new System.Windows.Forms.Button();
+            this.openFileDialogImagem = new System.Windows.Forms.OpenFileDialog();
             this.pesquisarNome.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.gbxInfoCli.SuspendLayout();
@@ -213,6 +214,7 @@ namespace AdV.View.Pesquisar
             this.btnDeletarCodCli.TabIndex = 34;
             this.btnDeletarCodCli.Text = "Deletar";
             this.btnDeletarCodCli.UseVisualStyleBackColor = true;
+            this.btnDeletarCodCli.Click += new System.EventHandler(this.btnDeletarCodCli_Click);
             // 
             // btnAlterarCodCli
             // 
@@ -222,6 +224,7 @@ namespace AdV.View.Pesquisar
             this.btnAlterarCodCli.TabIndex = 33;
             this.btnAlterarCodCli.Text = "Alterar";
             this.btnAlterarCodCli.UseVisualStyleBackColor = true;
+            this.btnAlterarCodCli.Click += new System.EventHandler(this.btnAlterarCodCli_Click);
             // 
             // lblPortifolioCodCli
             // 
@@ -243,6 +246,7 @@ namespace AdV.View.Pesquisar
             this.btnBuscarImagemCodCli.TabIndex = 31;
             this.btnBuscarImagemCodCli.Text = "Buscar Imagem";
             this.btnBuscarImagemCodCli.UseVisualStyleBackColor = true;
+            this.btnBuscarImagemCodCli.Click += new System.EventHandler(this.btnBuscarImagemCodCli_Click);
             // 
             // pbxImagemCodCli
             // 
@@ -336,6 +340,10 @@ namespace AdV.View.Pesquisar
             this.btnCodigoCli.UseVisualStyleBackColor = true;
             this.btnCodigoCli.Click += new System.EventHandler(this.btnCodigoCli_Click);
             // 
+            // openFileDialogImagem
+            // 
+            this.openFileDialogImagem.FileName = "openFileDialogImagem";
+            // 
             // TelaPesquisarCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -392,5 +400,6 @@ namespace AdV.View.Pesquisar
         private System.Windows.Forms.DataGridViewTextBoxColumn Email;
         private System.Windows.Forms.DataGridViewTextBoxColumn Foto;
         private System.Windows.Forms.GroupBox gbxInfoCli;
+        private System.Windows.Forms.OpenFileDialog openFileDialogImagem;
     }
 }

@@ -97,6 +97,9 @@ namespace AdV.Controller
                 comando.ExecuteNonQuery();
                 MessageBox.Show("Cliente excluído com sucesso", "Exclução", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+            catch
+            {
+                MessageBox.Show("O Cliente não pode ser excluído", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Error);            }
             finally
             {
                 if (conectar.State != ConnectionState.Closed)

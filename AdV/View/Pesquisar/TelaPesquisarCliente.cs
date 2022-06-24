@@ -73,5 +73,86 @@ namespace AdV.View.Pesquisar
         {
 
         }
+
+        private void btnDeletarCodCli_Click(object sender, EventArgs e)
+        {
+            if (tbxCodigoCli.Text == "")
+            {
+                MessageBox.Show("Digite um código do cliente", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                tbxCodigoCli.Text = string.Empty;
+                tbxCodigoCli.Focus();
+                tbxCodigoCli.SelectAll();
+                tbxNomeCodCli.Text = string.Empty;
+                tbxEmailCodCli.Text = string.Empty;
+                tbxSenhaCodCli.Text = string.Empty;
+                pbxImagemCodCli.Image = null;
+            }
+            else
+            {
+                var resposta = MessageBox.Show("Deseja excluir o Cliente" + tbxCodigoCli.Text + "?", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Stop);
+
+                if(resposta == DialogResult.Yes)
+                {
+                    Cliente.CodigoCli = Convert.ToInt32(tbxCodigoCli.Text);
+
+                    Manipulacliente manipulacliente = new Manipulacliente();
+                    manipulacliente.deletarCliente();
+                }
+
+                tbxCodigoCli.Text = string.Empty;
+                tbxCodigoCli.Focus();
+                tbxCodigoCli.SelectAll();
+                tbxNomeCodCli.Text = string.Empty;
+                tbxEmailCodCli.Text = string.Empty;
+                tbxSenhaCodCli.Text = string.Empty;
+                pbxImagemCodCli.Image = null;
+                return;
+
+            }
+        }
+
+        private void btnAlterarCodCli_Click(object sender, EventArgs e)
+        {
+            if (tbxCodigoCli.Text == "")
+            {
+                MessageBox.Show("Digite um código do cliente", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                tbxCodigoCli.Text = string.Empty;
+                tbxCodigoCli.Focus();
+                tbxCodigoCli.SelectAll();
+                tbxNomeCodCli.Text = string.Empty;
+                tbxEmailCodCli.Text = string.Empty;
+                tbxSenhaCodCli.Text = string.Empty;
+                pbxImagemCodCli.Image = null;
+            }
+            else
+            {
+                var resposta = MessageBox.Show("Deseja alterar os dados do Cliente?", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Stop);
+
+                if (resposta == DialogResult.Yes)
+                {
+                    Cliente.CodigoCli = Convert.ToInt32(tbxCodigoCli.Text);
+                    Cliente.NomeCli = tbxNomeCodCli.Text;
+                    Cliente.EmailCli = tbxEmailCodCli.Text;
+                    Cliente.SenhaCli = tbxSenhaCodCli.Text;
+
+                    MemoryStream ms = new MemoryStream((byte[])Cliente.ImagemCli);
+                    pbxImagemCodCli.Image.Save(ms,pbxImagemCodCli.Image.RawFormat);
+                    Cliente.ImagemCli = ms.ToArray();
+
+                    Manipulacliente manipulacliente = new Manipulacliente();
+                    manipulacliente.alterarCliente();
+                }
+                return;
+            }
+        }
+
+        private void btnBuscarImagemCodCli_Click(object sender, EventArgs e)
+        {
+            openFileDialogImagem.Filter = "Escolha uma imagem (*.jpg;*.png;*.jpeg)" + "| *.jpg; *.jpeg;*.png";
+            if (openFileDialogImagem.ShowDialog() == DialogResult.OK)
+            {
+                pbxImagemCodCli.Image = Image.FromFile(openFileDialogImagem.FileName);
+            }
+        }
     }
 }
