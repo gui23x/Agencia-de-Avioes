@@ -51,7 +51,7 @@ namespace AdV.View.Pesquisar
             this.pesquisarCodigo = new System.Windows.Forms.TabPage();
             this.dtpVoltaPac = new System.Windows.Forms.DateTimePicker();
             this.dtpIdaPac = new System.Windows.Forms.DateTimePicker();
-            this.rtbDestinoPac = new System.Windows.Forms.RichTextBox();
+            this.rtbDescricaoPac = new System.Windows.Forms.RichTextBox();
             this.lblPortifolioCodPac = new System.Windows.Forms.Label();
             this.btnBuscarImagemCodPac = new System.Windows.Forms.Button();
             this.pbxImagemCodPac = new System.Windows.Forms.PictureBox();
@@ -61,7 +61,7 @@ namespace AdV.View.Pesquisar
             this.lblIdaPac = new System.Windows.Forms.Label();
             this.btnDeletarCodPac = new System.Windows.Forms.Button();
             this.btnAlterarCodPac = new System.Windows.Forms.Button();
-            this.tbxDescricaoPac = new System.Windows.Forms.TextBox();
+            this.tbxDestinoPac = new System.Windows.Forms.TextBox();
             this.tbxOriPac = new System.Windows.Forms.TextBox();
             this.lblSenhaCodPac = new System.Windows.Forms.Label();
             this.lblEmailCodPac = new System.Windows.Forms.Label();
@@ -70,6 +70,7 @@ namespace AdV.View.Pesquisar
             this.lblCodigoPac = new System.Windows.Forms.Label();
             this.btnCodPac = new System.Windows.Forms.Button();
             this.lblTituloPac = new System.Windows.Forms.Label();
+            this.openFileDialogImagem = new System.Windows.Forms.OpenFileDialog();
             this.pesquisarNomeFun.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInfoDesPac)).BeginInit();
@@ -242,7 +243,7 @@ namespace AdV.View.Pesquisar
             this.pesquisarCodigo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pesquisarCodigo.BackgroundImage")));
             this.pesquisarCodigo.Controls.Add(this.dtpVoltaPac);
             this.pesquisarCodigo.Controls.Add(this.dtpIdaPac);
-            this.pesquisarCodigo.Controls.Add(this.rtbDestinoPac);
+            this.pesquisarCodigo.Controls.Add(this.rtbDescricaoPac);
             this.pesquisarCodigo.Controls.Add(this.lblPortifolioCodPac);
             this.pesquisarCodigo.Controls.Add(this.btnBuscarImagemCodPac);
             this.pesquisarCodigo.Controls.Add(this.pbxImagemCodPac);
@@ -252,7 +253,7 @@ namespace AdV.View.Pesquisar
             this.pesquisarCodigo.Controls.Add(this.lblIdaPac);
             this.pesquisarCodigo.Controls.Add(this.btnDeletarCodPac);
             this.pesquisarCodigo.Controls.Add(this.btnAlterarCodPac);
-            this.pesquisarCodigo.Controls.Add(this.tbxDescricaoPac);
+            this.pesquisarCodigo.Controls.Add(this.tbxDestinoPac);
             this.pesquisarCodigo.Controls.Add(this.tbxOriPac);
             this.pesquisarCodigo.Controls.Add(this.lblSenhaCodPac);
             this.pesquisarCodigo.Controls.Add(this.lblEmailCodPac);
@@ -284,13 +285,13 @@ namespace AdV.View.Pesquisar
             this.dtpIdaPac.Size = new System.Drawing.Size(99, 23);
             this.dtpIdaPac.TabIndex = 45;
             // 
-            // rtbDestinoPac
+            // rtbDescricaoPac
             // 
-            this.rtbDestinoPac.Location = new System.Drawing.Point(390, 254);
-            this.rtbDestinoPac.Name = "rtbDestinoPac";
-            this.rtbDestinoPac.Size = new System.Drawing.Size(380, 144);
-            this.rtbDestinoPac.TabIndex = 44;
-            this.rtbDestinoPac.Text = "";
+            this.rtbDescricaoPac.Location = new System.Drawing.Point(390, 254);
+            this.rtbDescricaoPac.Name = "rtbDescricaoPac";
+            this.rtbDescricaoPac.Size = new System.Drawing.Size(380, 144);
+            this.rtbDescricaoPac.TabIndex = 44;
+            this.rtbDescricaoPac.Text = "";
             // 
             // lblPortifolioCodPac
             // 
@@ -312,6 +313,7 @@ namespace AdV.View.Pesquisar
             this.btnBuscarImagemCodPac.TabIndex = 42;
             this.btnBuscarImagemCodPac.Text = "Buscar Imagem";
             this.btnBuscarImagemCodPac.UseVisualStyleBackColor = true;
+            this.btnBuscarImagemCodPac.Click += new System.EventHandler(this.btnBuscarImagemCodPac_Click);
             // 
             // pbxImagemCodPac
             // 
@@ -372,6 +374,7 @@ namespace AdV.View.Pesquisar
             this.btnDeletarCodPac.TabIndex = 34;
             this.btnDeletarCodPac.Text = "Deletar";
             this.btnDeletarCodPac.UseVisualStyleBackColor = true;
+            this.btnDeletarCodPac.Click += new System.EventHandler(this.btnDeletarCodPac_Click);
             // 
             // btnAlterarCodPac
             // 
@@ -381,13 +384,14 @@ namespace AdV.View.Pesquisar
             this.btnAlterarCodPac.TabIndex = 33;
             this.btnAlterarCodPac.Text = "Alterar";
             this.btnAlterarCodPac.UseVisualStyleBackColor = true;
+            this.btnAlterarCodPac.Click += new System.EventHandler(this.btnAlterarCodPac_Click);
             // 
-            // tbxDescricaoPac
+            // tbxDestinoPac
             // 
-            this.tbxDescricaoPac.Location = new System.Drawing.Point(192, 107);
-            this.tbxDescricaoPac.Name = "tbxDescricaoPac";
-            this.tbxDescricaoPac.Size = new System.Drawing.Size(257, 23);
-            this.tbxDescricaoPac.TabIndex = 29;
+            this.tbxDestinoPac.Location = new System.Drawing.Point(192, 107);
+            this.tbxDestinoPac.Name = "tbxDestinoPac";
+            this.tbxDestinoPac.Size = new System.Drawing.Size(257, 23);
+            this.tbxDestinoPac.TabIndex = 29;
             // 
             // tbxOriPac
             // 
@@ -466,6 +470,10 @@ namespace AdV.View.Pesquisar
             this.lblTituloPac.TabIndex = 4;
             this.lblTituloPac.Text = "Pesquisar Pacotes";
             // 
+            // openFileDialogImagem
+            // 
+            this.openFileDialogImagem.FileName = "openFileDialogImagem";
+            // 
             // TelaPesquisarPacote
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -501,7 +509,7 @@ namespace AdV.View.Pesquisar
         private System.Windows.Forms.TabPage pesquisarCodigo;
         private System.Windows.Forms.Button btnDeletarCodPac;
         private System.Windows.Forms.Button btnAlterarCodPac;
-        private System.Windows.Forms.TextBox tbxDescricaoPac;
+        private System.Windows.Forms.TextBox tbxDestinoPac;
         private System.Windows.Forms.TextBox tbxOriPac;
         private System.Windows.Forms.Label lblSenhaCodPac;
         private System.Windows.Forms.Label lblEmailCodPac;
@@ -527,11 +535,12 @@ namespace AdV.View.Pesquisar
         private System.Windows.Forms.Label lblValorPac;
         private System.Windows.Forms.Label lblVoltaPac;
         private System.Windows.Forms.Label lblIdaPac;
-        private System.Windows.Forms.RichTextBox rtbDestinoPac;
+        private System.Windows.Forms.RichTextBox rtbDescricaoPac;
         private System.Windows.Forms.Label lblPortifolioCodPac;
         private System.Windows.Forms.Button btnBuscarImagemCodPac;
         private System.Windows.Forms.PictureBox pbxImagemCodPac;
         private System.Windows.Forms.DateTimePicker dtpVoltaPac;
         private System.Windows.Forms.DateTimePicker dtpIdaPac;
+        private System.Windows.Forms.OpenFileDialog openFileDialogImagem;
     }
 }

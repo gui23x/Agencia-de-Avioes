@@ -187,6 +187,7 @@ namespace AdV.View.Pesquisar
             this.btnDeletarCodFun.TabIndex = 34;
             this.btnDeletarCodFun.Text = "Deletar";
             this.btnDeletarCodFun.UseVisualStyleBackColor = true;
+            this.btnDeletarCodFun.Click += new System.EventHandler(this.btnDeletarCodFun_Click);
             // 
             // btnAlterarCodFun
             // 
@@ -196,6 +197,7 @@ namespace AdV.View.Pesquisar
             this.btnAlterarCodFun.TabIndex = 33;
             this.btnAlterarCodFun.Text = "Alterar";
             this.btnAlterarCodFun.UseVisualStyleBackColor = true;
+            this.btnAlterarCodFun.Click += new System.EventHandler(this.btnAlterarCodFun_Click);
             // 
             // tbxSenhaCodFun
             // 

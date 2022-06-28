@@ -114,7 +114,7 @@ namespace AdV.Controller
         public void alterarPacote()
         {
             SqlConnection conectar = new SqlConnection(ConexaoBanco.conectar());
-            SqlCommand comando = new SqlCommand("pAlterarPacote", conectar);
+            SqlCommand comando = new SqlCommand("pAlterarPacotes", conectar);
             comando.CommandType = CommandType.StoredProcedure;
 
             try
