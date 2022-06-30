@@ -96,9 +96,9 @@ namespace AdV.View.Pesquisar
                 tbxOriPac.Text = string.Empty;
                 tbxDestinoPac.Text = string.Empty;
                 rtbDescricaoPac.Text = string.Empty;
-                dtpIdaPac.Text = Convert.ToString(Pacote.DataPac);
-                dtpVoltaPac.Text = Convert.ToString(Pacote.DataPacVolta);
-                tbxValorPac.Text = Convert.ToString(Pacote.ValorPac);
+                dtpIdaPac.Text = string.Empty;
+                dtpVoltaPac.Text = string.Empty;
+                tbxValorPac.Text = string.Empty;
             }
             else
             {
@@ -111,8 +111,8 @@ namespace AdV.View.Pesquisar
                     Pacote.DestinoPac = tbxDestinoPac.Text;
                     Pacote.DataPac = dtpIdaPac.Value;
                     Pacote.DataPacVolta = dtpVoltaPac.Value;
-                    Pacote.DescricaoPac = tbxDesPac.Text;
-                    Pacote.ValorPac = Convert.ToDecimal(Pacote.ValorPac);
+                    Pacote.DescricaoPac = tbxNomeDesPac.Text;
+                    Pacote.ValorPac = Convert.ToInt32(tbxValorPac.Text);
 
                     MemoryStream ms = new MemoryStream((byte[])Pacote.ImagemPac);
                     pbxImagemCodPac.Image.Save(ms, pbxImagemCodPac.Image.RawFormat);
@@ -174,6 +174,60 @@ namespace AdV.View.Pesquisar
             {
                 pbxImagemCodPac.Image = Image.FromFile(openFileDialogImagem.FileName);
             }
+        }
+
+        private void btnNomeOriPac_Click(object sender, EventArgs e)
+        {
+            if (tbxNomeOriPac.Text == "")
+            {
+                MessageBox.Show("Digite o nome do Pacote de Origem.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            Pacote.OrigemPac = tbxNomeOriPac.Text;
+            dgvInfoOriPac.DataSource = Manipulapacote.pesquisaOrigemPac();
+
+
+            dgvInfoOriPac.Columns[0].Visible = false;
+            dgvInfoOriPac.Columns[1].Visible = false;
+            dgvInfoOriPac.Columns[2].Visible = false;
+            dgvInfoOriPac.Columns[3].Visible = false;
+            dgvInfoOriPac.Columns[4].Visible = false;
+            dgvInfoOriPac.Columns[5].HeaderCell.Value = "Código";
+            dgvInfoOriPac.Columns[6].HeaderCell.Value = "Valor";
+            dgvInfoOriPac.Columns[7].HeaderCell.Value = "Origem";
+            dgvInfoOriPac.Columns[8].Visible = false;
+            dgvInfoOriPac.Columns[9].HeaderCell.Value = "Data de Ida";
+            dgvInfoOriPac.Columns[10].HeaderCell.Value = "Data de Volta";
+            dgvInfoOriPac.Columns[11].Visible = false;
+            dgvInfoOriPac.Columns[12].Visible = false;
+        }
+
+        private void btnDesPac_Click(object sender, EventArgs e)
+        {
+            if (tbxNomeDesPac.Text == "")
+            {
+                MessageBox.Show("Digite o nome do Pacote de Destino.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            Pacote.DestinoPac = tbxNomeDesPac.Text;
+            dgvInfoDesPac.DataSource = Manipulapacote.pesquisaDestinoPac();
+
+
+            dgvInfoDesPac.Columns[0].Visible = false;
+            dgvInfoDesPac.Columns[1].Visible = false;
+            dgvInfoDesPac.Columns[2].Visible = false;
+            dgvInfoDesPac.Columns[3].Visible = false;
+            dgvInfoDesPac.Columns[4].Visible = false;
+            dgvInfoDesPac.Columns[5].HeaderCell.Value = "Código";
+            dgvInfoDesPac.Columns[6].HeaderCell.Value = "Valor";
+            dgvInfoDesPac.Columns[7].Visible = false;
+            dgvInfoDesPac.Columns[8].HeaderCell.Value = "Destino";
+            dgvInfoDesPac.Columns[9].HeaderCell.Value = "Data de Ida";
+            dgvInfoDesPac.Columns[10].HeaderCell.Value = "Data de Volta";
+            dgvInfoDesPac.Columns[11].Visible = false;
+            dgvInfoDesPac.Columns[12].Visible = false;
         }
     }
 }

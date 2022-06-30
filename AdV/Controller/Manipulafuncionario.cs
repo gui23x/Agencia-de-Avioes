@@ -140,7 +140,7 @@ namespace AdV.Controller
             SqlCommand comando = new SqlCommand("pPesquisaNomeFuncionario", conectar);
             comando.CommandType = CommandType.StoredProcedure;
 
-            comando.Parameters.AddWithValue("@nomeFuncionario", Funcionario.NomeFun);
+            comando.Parameters.AddWithValue("@nomeFun", Funcionario.NomeFun);
             conectar.Open();
             comando.ExecuteNonQuery();
 

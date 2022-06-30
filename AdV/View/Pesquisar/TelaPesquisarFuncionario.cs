@@ -27,7 +27,22 @@ namespace AdV.View.Pesquisar
 
         private void btnNomeFun_Click(object sender, EventArgs e)
         {
-          
+            if (tbxNomeFun.Text == "")
+            {
+                MessageBox.Show("Digite o nome do Funcionário.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            Funcionario.NomeFun = tbxNomeFun.Text;
+            dgvInfoFun.DataSource = Manipulafuncionario.pesquisarNomeFuncionario();
+
+            dgvInfoFun.Columns[0].Visible = false;
+            dgvInfoFun.Columns[1].Visible = false;
+            dgvInfoFun.Columns[2].Visible = false;
+            dgvInfoFun.Columns[3].Visible = false;
+            dgvInfoFun.Columns[4].HeaderCell.Value = "Código";
+            dgvInfoFun.Columns[5].HeaderCell.Value = "Nome";
+            dgvInfoFun.Columns[6].HeaderCell.Value = "E-mail";
         }
        
 

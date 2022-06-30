@@ -71,6 +71,25 @@ namespace AdV.View.Pesquisar
 
         private void btnNome_Click(object sender, EventArgs e)
         {
+            if(tbxNome.Text == "")
+            {
+                MessageBox.Show("Digite o nome do cliente.","Atenção",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                return;
+            }
+
+            Cliente.NomeCli = tbxNome.Text;
+            dgvInfoCli.DataSource = Manipulacliente.pesquisarNomeCliente();
+
+            dgvInfoCli.Columns[0].Visible = false;
+            dgvInfoCli.Columns[1].Visible = false;
+            dgvInfoCli.Columns[2].Visible = false;
+            dgvInfoCli.Columns[3].Visible = false;
+            dgvInfoCli.Columns[4].HeaderCell.Value = "Código";
+            dgvInfoCli.Columns[5].HeaderCell.Value = "Nome";
+            dgvInfoCli.Columns[6].HeaderCell.Value = "E-mail";
+            dgvInfoCli.Columns[7].Visible = false;
+            dgvInfoCli.Columns[8].Visible = false;
+
 
         }
 

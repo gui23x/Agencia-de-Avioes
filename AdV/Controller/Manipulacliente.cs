@@ -147,7 +147,7 @@ namespace AdV.Controller
             SqlCommand comando = new SqlCommand("pPesquisaNomeCliente", conectar);
             comando.CommandType = CommandType.StoredProcedure;
 
-            comando.Parameters.AddWithValue("@nomeCliente", Cliente.NomeCli);
+            comando.Parameters.AddWithValue("@nomeCli", Cliente.NomeCli);
             conectar.Open();
             comando.ExecuteNonQuery();
 

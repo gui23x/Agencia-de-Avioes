@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using AdV.View.Pesquisar;
+using AdV.View.Registrar;
 
 namespace AdV.View
 {
@@ -62,6 +63,12 @@ namespace AdV.View
         {
             TelaPesquisarPacote pesquisarPacote = new TelaPesquisarPacote();
             pesquisarPacote.ShowDialog();
+        }
+
+        private void venCadastrar_Click(object sender, EventArgs e)
+        {
+            RegistrarVen registrarVendas = new RegistrarVen();
+            registrarVendas.ShowDialog();
         }
     }
 }

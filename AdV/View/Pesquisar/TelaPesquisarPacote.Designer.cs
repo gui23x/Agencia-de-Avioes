@@ -33,18 +33,20 @@ namespace AdV.View.Pesquisar
             this.pesquisarNomeFun = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dgvInfoDesPac = new System.Windows.Forms.DataGridView();
+            this.Código = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.destino = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnDesPac = new System.Windows.Forms.Button();
-            this.tbxDesPac = new System.Windows.Forms.TextBox();
+            this.tbxNomeDesPac = new System.Windows.Forms.TextBox();
             this.lblDesPac = new System.Windows.Forms.Label();
             this.dgvInfoOriPac = new System.Windows.Forms.DataGridView();
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Foto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataida = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataVolta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.origm = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnNomeOriPac = new System.Windows.Forms.Button();
             this.tbxNomeOriPac = new System.Windows.Forms.TextBox();
             this.lblNomeOriPac = new System.Windows.Forms.Label();
@@ -94,7 +96,7 @@ namespace AdV.View.Pesquisar
             this.tabPage1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tabPage1.BackgroundImage")));
             this.tabPage1.Controls.Add(this.dgvInfoDesPac);
             this.tabPage1.Controls.Add(this.btnDesPac);
-            this.tabPage1.Controls.Add(this.tbxDesPac);
+            this.tabPage1.Controls.Add(this.tbxNomeDesPac);
             this.tabPage1.Controls.Add(this.lblDesPac);
             this.tabPage1.Controls.Add(this.dgvInfoOriPac);
             this.tabPage1.Controls.Add(this.btnNomeOriPac);
@@ -115,10 +117,11 @@ namespace AdV.View.Pesquisar
             this.dgvInfoDesPac.BackgroundColor = System.Drawing.Color.CadetBlue;
             this.dgvInfoDesPac.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvInfoDesPac.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Código,
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4});
+            this.destino,
+            this.dataGridViewTextBoxColumn3});
             this.dgvInfoDesPac.Location = new System.Drawing.Point(10, 245);
             this.dgvInfoDesPac.Name = "dgvInfoDesPac";
             this.dgvInfoDesPac.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -127,25 +130,30 @@ namespace AdV.View.Pesquisar
             this.dgvInfoDesPac.Size = new System.Drawing.Size(763, 164);
             this.dgvInfoDesPac.TabIndex = 7;
             // 
+            // Código
+            // 
+            this.Código.HeaderText = "Código";
+            this.Código.Name = "Código";
+            // 
             // dataGridViewTextBoxColumn1
             // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "Código";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Data de Ida";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             // 
             // dataGridViewTextBoxColumn2
             // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "Nome";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Data de Volta";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // destino
+            // 
+            this.destino.HeaderText = "Destino";
+            this.destino.Name = "destino";
             // 
             // dataGridViewTextBoxColumn3
             // 
-            this.dataGridViewTextBoxColumn3.HeaderText = "Email";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Valor";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.HeaderText = "Foto";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             // 
             // btnDesPac
             // 
@@ -155,13 +163,14 @@ namespace AdV.View.Pesquisar
             this.btnDesPac.TabIndex = 6;
             this.btnDesPac.Text = "Buscar";
             this.btnDesPac.UseVisualStyleBackColor = true;
+            this.btnDesPac.Click += new System.EventHandler(this.btnDesPac_Click);
             // 
-            // tbxDesPac
+            // tbxNomeDesPac
             // 
-            this.tbxDesPac.Location = new System.Drawing.Point(164, 215);
-            this.tbxDesPac.Name = "tbxDesPac";
-            this.tbxDesPac.Size = new System.Drawing.Size(288, 23);
-            this.tbxDesPac.TabIndex = 5;
+            this.tbxNomeDesPac.Location = new System.Drawing.Point(164, 215);
+            this.tbxNomeDesPac.Name = "tbxNomeDesPac";
+            this.tbxNomeDesPac.Size = new System.Drawing.Size(288, 23);
+            this.tbxNomeDesPac.TabIndex = 5;
             // 
             // lblDesPac
             // 
@@ -181,9 +190,10 @@ namespace AdV.View.Pesquisar
             this.dgvInfoOriPac.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvInfoOriPac.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Codigo,
-            this.Nome,
-            this.Email,
-            this.Foto});
+            this.dataida,
+            this.dataVolta,
+            this.origm,
+            this.Valor});
             this.dgvInfoOriPac.Location = new System.Drawing.Point(10, 55);
             this.dgvInfoOriPac.Name = "dgvInfoOriPac";
             this.dgvInfoOriPac.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -197,20 +207,25 @@ namespace AdV.View.Pesquisar
             this.Codigo.HeaderText = "Código";
             this.Codigo.Name = "Codigo";
             // 
-            // Nome
+            // dataida
             // 
-            this.Nome.HeaderText = "Nome";
-            this.Nome.Name = "Nome";
+            this.dataida.HeaderText = "Data de Ida";
+            this.dataida.Name = "dataida";
             // 
-            // Email
+            // dataVolta
             // 
-            this.Email.HeaderText = "Email";
-            this.Email.Name = "Email";
+            this.dataVolta.HeaderText = "Data de Volta";
+            this.dataVolta.Name = "dataVolta";
             // 
-            // Foto
+            // origm
             // 
-            this.Foto.HeaderText = "Foto";
-            this.Foto.Name = "Foto";
+            this.origm.HeaderText = "Origem";
+            this.origm.Name = "origm";
+            // 
+            // Valor
+            // 
+            this.Valor.HeaderText = "Valor";
+            this.Valor.Name = "Valor";
             // 
             // btnNomeOriPac
             // 
@@ -220,6 +235,7 @@ namespace AdV.View.Pesquisar
             this.btnNomeOriPac.TabIndex = 2;
             this.btnNomeOriPac.Text = "Buscar";
             this.btnNomeOriPac.UseVisualStyleBackColor = true;
+            this.btnNomeOriPac.Click += new System.EventHandler(this.btnNomeOriPac_Click);
             // 
             // tbxNomeOriPac
             // 
@@ -484,6 +500,7 @@ namespace AdV.View.Pesquisar
             this.Controls.Add(this.pesquisarNomeFun);
             this.Controls.Add(this.lblTituloPac);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "TelaPesquisarPacote";
             this.Text = "Agência de Viagens- Pesquisar Pacotes";
             this.pesquisarNomeFun.ResumeLayout(false);
@@ -519,18 +536,10 @@ namespace AdV.View.Pesquisar
         private System.Windows.Forms.Button btnCodPac;
         private System.Windows.Forms.Label lblTituloPac;
         private System.Windows.Forms.DataGridView dgvInfoDesPac;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.Button btnDesPac;
-        private System.Windows.Forms.TextBox tbxDesPac;
+        private System.Windows.Forms.TextBox tbxNomeDesPac;
         private System.Windows.Forms.Label lblDesPac;
         private System.Windows.Forms.DataGridView dgvInfoOriPac;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Foto;
         private System.Windows.Forms.TextBox tbxValorPac;
         private System.Windows.Forms.Label lblValorPac;
         private System.Windows.Forms.Label lblVoltaPac;
@@ -542,5 +551,15 @@ namespace AdV.View.Pesquisar
         private System.Windows.Forms.DateTimePicker dtpVoltaPac;
         private System.Windows.Forms.DateTimePicker dtpIdaPac;
         private System.Windows.Forms.OpenFileDialog openFileDialogImagem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataida;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataVolta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Valor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn origm;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Código;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn destino;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
     }
 }
