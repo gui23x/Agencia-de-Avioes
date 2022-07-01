@@ -73,6 +73,8 @@ namespace AdV.View.Registrar
                 tbxcodpac.Focus();
                 tbxcodpac.SelectAll();
                 tbxvalorpac.Text = string.Empty;
+                tbxregori.Text = string.Empty;
+                tbxregdes.Text = string.Empty;
             }
             else
             {
@@ -81,6 +83,8 @@ namespace AdV.View.Registrar
                 manipulaPacote.pesquisarcodigoPacote();
 
                 tbxcodpac.Text = Pacote.CodigoPac.ToString();
+                tbxregori.Text = Pacote.OrigemPac;
+                tbxregdes.Text = Pacote.DestinoPac;
                 tbxvalorpac.Text = Convert.ToString(Pacote.ValorPac);
 
             }
@@ -88,7 +92,26 @@ namespace AdV.View.Registrar
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (tbxvalorpac.Text == "")
+            {
+                MessageBox.Show("Preencha as informações corretamente", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+               
+              
+
+                Venda.PagoVenda = "Sim";
+                Cliente.CodigoCli = Convert.ToInt32(tbxcodcli.Text);
+                Funcionario.CodigoFun = Convert.ToInt32(tbxcodfun.Text);
+                Pacote.CodigoPac = Convert.ToInt32(tbxcodpac.Text);
+
+                Manipulavenda manipulaVenda = new Manipulavenda();
+                manipulaVenda.cadastrarVenda();
+
+            }
 
         }
+
     }
 }

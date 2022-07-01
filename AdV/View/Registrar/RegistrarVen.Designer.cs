@@ -29,6 +29,7 @@ namespace AdV.View.Registrar
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistrarVen));
             this.lblcodfun = new System.Windows.Forms.Label();
             this.lbltitulo = new System.Windows.Forms.Label();
             this.lblfun = new System.Windows.Forms.Label();
@@ -46,11 +47,16 @@ namespace AdV.View.Registrar
             this.btncli = new System.Windows.Forms.Button();
             this.btnpac = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.tbxregdes = new System.Windows.Forms.TextBox();
+            this.tbxregori = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblcodfun
             // 
             this.lblcodfun.AutoSize = true;
+            this.lblcodfun.BackColor = System.Drawing.Color.Transparent;
             this.lblcodfun.Location = new System.Drawing.Point(59, 165);
             this.lblcodfun.Name = "lblcodfun";
             this.lblcodfun.Size = new System.Drawing.Size(173, 15);
@@ -60,6 +66,7 @@ namespace AdV.View.Registrar
             // lbltitulo
             // 
             this.lbltitulo.AutoSize = true;
+            this.lbltitulo.BackColor = System.Drawing.Color.Transparent;
             this.lbltitulo.Font = new System.Drawing.Font("Segoe UI", 26.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.lbltitulo.Location = new System.Drawing.Point(102, 54);
             this.lbltitulo.Name = "lbltitulo";
@@ -70,6 +77,7 @@ namespace AdV.View.Registrar
             // lblfun
             // 
             this.lblfun.AutoSize = true;
+            this.lblfun.BackColor = System.Drawing.Color.Transparent;
             this.lblfun.Location = new System.Drawing.Point(59, 195);
             this.lblfun.Name = "lblfun";
             this.lblfun.Size = new System.Drawing.Size(70, 15);
@@ -79,6 +87,7 @@ namespace AdV.View.Registrar
             // lblcodcli
             // 
             this.lblcodcli.AutoSize = true;
+            this.lblcodcli.BackColor = System.Drawing.Color.Transparent;
             this.lblcodcli.Location = new System.Drawing.Point(61, 228);
             this.lblcodcli.Name = "lblcodcli";
             this.lblcodcli.Size = new System.Drawing.Size(147, 15);
@@ -88,7 +97,8 @@ namespace AdV.View.Registrar
             // lblcli
             // 
             this.lblcli.AutoSize = true;
-            this.lblcli.Location = new System.Drawing.Point(61, 265);
+            this.lblcli.BackColor = System.Drawing.Color.Transparent;
+            this.lblcli.Location = new System.Drawing.Point(59, 260);
             this.lblcli.Name = "lblcli";
             this.lblcli.Size = new System.Drawing.Size(44, 15);
             this.lblcli.TabIndex = 4;
@@ -97,6 +107,7 @@ namespace AdV.View.Registrar
             // lblcodpac
             // 
             this.lblcodpac.AutoSize = true;
+            this.lblcodpac.BackColor = System.Drawing.Color.Transparent;
             this.lblcodpac.Location = new System.Drawing.Point(59, 293);
             this.lblcodpac.Name = "lblcodpac";
             this.lblcodpac.Size = new System.Drawing.Size(146, 15);
@@ -106,7 +117,8 @@ namespace AdV.View.Registrar
             // lblpac
             // 
             this.lblpac.AutoSize = true;
-            this.lblpac.Location = new System.Drawing.Point(59, 334);
+            this.lblpac.BackColor = System.Drawing.Color.Transparent;
+            this.lblpac.Location = new System.Drawing.Point(59, 402);
             this.lblpac.Name = "lblpac";
             this.lblpac.Size = new System.Drawing.Size(89, 15);
             this.lblpac.TabIndex = 6;
@@ -149,7 +161,7 @@ namespace AdV.View.Registrar
             // 
             // tbxvalorpac
             // 
-            this.tbxvalorpac.Location = new System.Drawing.Point(160, 331);
+            this.tbxvalorpac.Location = new System.Drawing.Point(160, 394);
             this.tbxvalorpac.Name = "tbxvalorpac";
             this.tbxvalorpac.Size = new System.Drawing.Size(178, 23);
             this.tbxvalorpac.TabIndex = 12;
@@ -186,20 +198,59 @@ namespace AdV.View.Registrar
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(207, 396);
+            this.button1.Location = new System.Drawing.Point(376, 412);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(84, 32);
             this.button1.TabIndex = 16;
-            this.button1.Text = "Cadastrar";
+            this.button1.Text = "Registrar";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Location = new System.Drawing.Point(59, 330);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(50, 15);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "Origem:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Location = new System.Drawing.Point(59, 363);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(50, 15);
+            this.label2.TabIndex = 18;
+            this.label2.Text = "Destino:";
+            // 
+            // tbxregdes
+            // 
+            this.tbxregdes.Location = new System.Drawing.Point(135, 355);
+            this.tbxregdes.Name = "tbxregdes";
+            this.tbxregdes.Size = new System.Drawing.Size(203, 23);
+            this.tbxregdes.TabIndex = 19;
+            // 
+            // tbxregori
+            // 
+            this.tbxregori.Location = new System.Drawing.Point(135, 322);
+            this.tbxregori.Name = "tbxregori";
+            this.tbxregori.Size = new System.Drawing.Size(203, 23);
+            this.tbxregori.TabIndex = 19;
             // 
             // RegistrarVen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(502, 542);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(502, 476);
+            this.Controls.Add(this.tbxregori);
+            this.Controls.Add(this.tbxregdes);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnpac);
             this.Controls.Add(this.btncli);
@@ -220,6 +271,7 @@ namespace AdV.View.Registrar
             this.MaximizeBox = false;
             this.Name = "RegistrarVen";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registrar Vendas";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -245,5 +297,9 @@ namespace AdV.View.Registrar
         private System.Windows.Forms.Button btncli;
         private System.Windows.Forms.Button btnpac;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox tbxregdes;
+        private System.Windows.Forms.TextBox tbxregori;
     }
 }

@@ -42,7 +42,6 @@ namespace AdV.View
             this.pacPesquisar = new System.Windows.Forms.ToolStripMenuItem();
             this.venVendas = new System.Windows.Forms.ToolStripMenuItem();
             this.venCadastrar = new System.Windows.Forms.ToolStripMenuItem();
-            this.venPesquisar = new System.Windows.Forms.ToolStripMenuItem();
             this.sair = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -141,8 +140,7 @@ namespace AdV.View
             // venVendas
             // 
             this.venVendas.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.venCadastrar,
-            this.venPesquisar});
+            this.venCadastrar});
             this.venVendas.Name = "venVendas";
             this.venVendas.Size = new System.Drawing.Size(76, 25);
             this.venVendas.Text = "Vendas";
@@ -153,12 +151,6 @@ namespace AdV.View
             this.venCadastrar.Size = new System.Drawing.Size(180, 26);
             this.venCadastrar.Text = "Resgistrar";
             this.venCadastrar.Click += new System.EventHandler(this.venCadastrar_Click);
-            // 
-            // venPesquisar
-            // 
-            this.venPesquisar.Name = "venPesquisar";
-            this.venPesquisar.Size = new System.Drawing.Size(180, 26);
-            this.venPesquisar.Text = "Pesquisar";
             // 
             // sair
             // 
@@ -205,7 +197,6 @@ namespace AdV.View
         private System.Windows.Forms.ToolStripMenuItem pacPesquisar;
         private System.Windows.Forms.ToolStripMenuItem venVendas;
         private System.Windows.Forms.ToolStripMenuItem venCadastrar;
-        private System.Windows.Forms.ToolStripMenuItem venPesquisar;
         private System.Windows.Forms.ToolStripMenuItem sair;
     }
 }

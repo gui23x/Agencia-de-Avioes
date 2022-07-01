@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
+using AdV.Model;
+using System.Windows.Forms;
 
 namespace AdV.Controller
 {
@@ -18,15 +20,23 @@ namespace AdV.Controller
 
             try
             {
-                comando.Parameters.AddWithValue("@codigoCliFK", "");
-                comando.Parameters.AddWithValue("@codigoFunFK", "");
-                comando.Parameters.AddWithValue("@codigoPacoteFK", "");
-                comando.Parameters.AddWithValue("@pagoVenda", "");
-                comando.Parameters.AddWithValue("@codigoVenda", "");
+                comando.Parameters.AddWithValue("@codigoCliFK", Cliente.CodigoCli);
+                comando.Parameters.AddWithValue("@codigoFunFK", Funcionario.CodigoFun);
+                comando.Parameters.AddWithValue("@codigoPacoteFK", Pacote.CodigoPac);
+                comando.Parameters.AddWithValue("@pagoVenda", Venda.PagoVenda);
+
+
+                SqlParameter nv = comando.Parameters.AddWithValue("@codigoVenda", SqlDbType.Int);
+                nv.Direction = ParameterDirection.Output;
+                conectar.Open();
+                comando.ExecuteNonQuery();
+                var resposta = MessageBox.Show("Cadastro da Venda efetuada com sucesso,deseja efetuar um novo registro?",
+                    "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
             }
-            catch 
-            { 
-            
+
+            catch
+            {
+
             }
         }
     }
